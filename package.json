@@ -1,0 +1,25 @@
+{
+  "name": "appsync-poc-backend",
+  "private": true,
+  "version": "1.0.0",
+  "description": "[1] create new repo in github [2] clone repo [3] add package json $ npm init -y",
+  "main": "index.js",
+  "scripts": {
+    "sls": "sls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pelssersconsultancy/appsync-poc-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pelssersconsultancy/appsync-poc-backend/issues"
+  },
+  "homepage": "https://github.com/pelssersconsultancy/appsync-poc-backend#readme",
+  "devDependencies": {
+    "serverless": "^3.33.0",
+    "serverless-appsync-plugin": "^2.3.1"
+  }
+}

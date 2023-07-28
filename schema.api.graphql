@@ -1,0 +1,36 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Query {
+  getMyProfile: Profile!
+  getProfile(userName: String!): Profile!
+}
+
+type Mutation {
+  editMyProfile(profileInput: ProfileInput!): Profile!
+}
+
+input ProfileInput {
+  userName: String!
+  firstName: String!
+  lastName: String!
+  imageUrl: AWSURL
+  birthDate: AWSDate
+}
+
+type Profile {
+  id: ID!
+  userName: String!
+  firstName: String!
+  lastName: String!
+  imageUrl: AWSURL
+  createdAt: AWSDateTime!
+  birthDate: AWSDate
+}
+
+type ProfilesPage {
+  tickets: [Profile!]
+  nextToken: String
+}
