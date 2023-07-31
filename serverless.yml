@@ -11,6 +11,7 @@ configValidationMode: error
 
 plugins:
   - serverless-appsync-plugin
+  - serverless-plugin-typescript
 
 provider:
   name: aws
@@ -30,6 +31,16 @@ custom:
   stage: ${opt:stage, self:provider.stage}
 
 appSync: ${file(serverless.appsync-api.yml)}
+
+functions:
+  confirmUserSignup:
+    handler: functions/confirm-user-signup.handler
+    environment:
+      USERS_TABLE: !Ref UsersTable
+    iamRoleStatements:
+      - Effect: Allow
+        Action: dynamodb:PutItem
+        Resource: !GetAtt UsersTable.Arn
 
 resources:
   Resources:

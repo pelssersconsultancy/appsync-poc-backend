@@ -8,8 +8,7 @@
   `$ npm init -y `
 - add "private": true to package.json
 - add serverless as dev dependency
-  `$ npm i --save-dev serverless@2.4.0`
-  !! Use 2.4.0 for now because 2.5.0 breaks serverless-iam-roles-per-function
+  `$ npm i --save-dev serverless`
 - add serverless script to package.json
 
 ```
@@ -22,12 +21,19 @@
   `$ npm run sls -- create -t aws-nodejs`
 
 - remove comments from serverless.yml
-  \*install the serverless-appsync-plugin (https://github.com/sid88in/serverless-appsync-plugin) and configure it in serverless.yml
-  `$npm i --save-dev serverless-appsync-plugin `
+- install aws-sam-cli
+  `$ brew install aws-sam-cli`
+- install following plugins as dev dependencies
+  `$npm i --save-dev serverless-appsync-plugin serverless-plugin-typescript`
+- install following packages as dev dependencies
+  `$npm i --save-dev aws-sdk`
+- install chance
+  `$npm i  chance`
 
 ```
 plugins:
   - serverless-appsync-plugin
+  - serverless-plugin-typescript
 ```
 
 ## Commands
